@@ -58,7 +58,7 @@ pub fn build(
     mut q_spawner: Query<(Entity, &mut HouseSpawner, &Transform)>,
     mut q_player: Query<(&Player, &Transform, &mut Inventory)>
 ){
-    let (player, p_transform, mut inventory) = q_player.single_mut();
+    let (_player, p_transform, mut inventory) = q_player.single_mut();
 
     for (entity, mut spawner, s_transfrorm) in &mut q_spawner {
 

@@ -48,7 +48,6 @@ fn add_material(
 
 pub fn spawn_inventory_text(
     mut commands: Commands,
-    asset_server: Res<AssetServer>
 ){
     commands.spawn((
         TextBundle::from_sections([
@@ -106,7 +105,7 @@ pub fn show_inventory(
    mut q_text: Query<(&mut Text, &InventoryText)>,
    q_inventory: Query<(&Player, &Inventory)>
 ){
-    let (player, invertory) = q_inventory.single();
+    let (_player, invertory) = q_inventory.single();
 
     for (mut text, i_text) in &mut q_text {
         match i_text.material {

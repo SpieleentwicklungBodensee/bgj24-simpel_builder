@@ -8,9 +8,10 @@ impl Plugin for PlayerPlugin {
         app
             .init_resource::<MyWorldCords>()
             .add_systems(Startup, spawn_inventory_text)
-            .add_systems(Update, move_p)
             .add_systems(Update, colect)
             .add_systems(Update, show_inventory)
+            .add_systems(Update, move_p)
+            .add_systems(Update, animation)
             .add_systems(Startup, spawn);
     }
 }

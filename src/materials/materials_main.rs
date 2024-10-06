@@ -1,5 +1,4 @@
 use bevy::prelude::*;
-use bevy::prelude::Msaa::Sample2;
 use crate::component::*;
 
 impl Plugin for ColektebelsPlugin {
@@ -91,7 +90,7 @@ pub fn spawn_wood(
     let ore = 5;
     let mut wood = 0;
 
-    for (material, transform) in &q_wood {
+    for (material, _transform) in &q_wood {
         if material == &ColMaterial::Wood {
             wood+=1
         }
@@ -112,7 +111,7 @@ pub fn spawn_stone(
     let ore = 5;
     let mut stone = 0;
 
-    for (material, transform) in &q_wood {
+    for (material, _transform) in &q_wood {
         if material == &ColMaterial::Stone {
             stone+=1
         }
